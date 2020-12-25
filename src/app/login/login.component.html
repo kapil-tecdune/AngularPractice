@@ -1,12 +1,18 @@
-<p>login works!</p>
+<mat-card id="card" style="text-align: center;">
+    <mat-card-title>
+        login
+    </mat-card-title>
 
-<!-- <button routerLink='/user'>Login</button> -->
+    <mat-card-content>
 
- <a routerLink="/user"><button> Login</button></a> 
+        <mat-form-field>
+            <input matInput placeholder="email">
+        </mat-form-field><br />
 
-<table>
+        <mat-form-field>
+            <input matInput placeholder="password">
+        </mat-form-field><br />
+        <button mat-raised-button color="primary" style="margin-right:5px;" routerLink="/user">login</button>
+        <button mat-raised-button color="primary" style="margin-right:5px;" routerLink="/user/addUser">register</button>
 
-
-
-
-</table>
+    </mat-card-content>

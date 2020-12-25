@@ -1,1 +1,40 @@
-<p>child-component works!</p>
+<mat-dialog-content class="mat-typography" style="text-align: center;">
+    <h2>Edit User</h2>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Name">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email">
+        </mat-form-field>
+    </p>
+  
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Status</mat-label>
+            <input matInput placeholder="Status">
+        </mat-form-field>
+    </p>
+
+    <p>
+            <mat-label>Gender</mat-label>
+    </p>
+    
+    <p>
+        <mat-radio-group>
+            <mat-radio-button value="male">Male</mat-radio-button>
+            <mat-radio-button value="female" style="margin-left: 10px;">Female</mat-radio-button>
+        </mat-radio-group>
+    </p>
+    
+</mat-dialog-content>
+
+<mat-dialog-content style="text-align: center;">
+    <button mat-stroked-button color="primary" >Update</button>
+
+    <button mat-stroked-button mat-dialog-close color="warn">Close</button>
+</mat-dialog-content>
