@@ -8,8 +8,6 @@ import { UtilServiceService } from '../util-service.service';
 	styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-	displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-	dataSource = ELEMENT_DATA;
 	userData: any;
 	exampleModal: any;
 	myModal: any;
