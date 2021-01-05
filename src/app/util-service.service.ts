@@ -23,7 +23,7 @@ export class UtilServiceService {
   }
 
   updateUserData(obj : any){
-    return this.http.put<any>(environment.server + '/users' + '/' + obj.id, obj)
+    return this.http.put<any>(environment.server + '/users' + '/' + 2, obj)
     .toPromise()
     .then(result => result)
   }
