@@ -11,6 +11,13 @@ export class UserComponent implements OnInit {
 	userData: any;
 	exampleModal: any;
 	myModal: any;
+	row_data = {
+		id : undefined,
+		name : undefined,
+		email : undefined,
+		status : undefined,
+		gender : undefined
+	};
 	//@ViewChild('basicModal', { static: true }) basicModal: ModalDirective;
 	closeResult = '';
 	constructor(private commonService: UtilServiceService,private modalService: NgbModal) { }
@@ -27,10 +34,12 @@ export class UserComponent implements OnInit {
 			console.log(this.userData)
 		});
 	}
-	open(content: any) {
-		this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+	open(content: any,data : any) {
+		console.log('data ',data)
+		this.row_data = {...data};
+		this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result: any) => {
 		  this.closeResult = `Closed with: ${result}`;
-		}, (reason) => {
+		}, (reason: any) => {
 		  this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
 		});
 	  }
@@ -59,4 +68,6 @@ export class UserComponent implements OnInit {
 		})
 
 	}
+
+
 }

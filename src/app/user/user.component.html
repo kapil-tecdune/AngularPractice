@@ -57,7 +57,7 @@
 			<th scope="col">Gender</th>
 			<th scope="col">Email</th>
 			<th scope="col">Status</th>
-			<th scope="col">Action</th>
+			<th scope="col">Action</th>btn-outline-dark
 
 		</tr>
 	</thead>
@@ -68,10 +68,7 @@
 			<td>{{item.gender == true ? 'Male' : 'Female'}}</td>
 			<td>{{item.email}}</td>
 			<td>{{item.status}}</td>
-			<td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
-					data-bs-target="#exampleModal">Edit</button>
-
-					<button class="btn btn-lg btn-outline-primary" (click)="open()">Launch demo modal</button>
+			<td><button class="btn btn-lg btn-outline-primary" (click)="open(content,item)">Edit</button>
 			</td>
 		</tr>
 	</tbody>
@@ -82,7 +79,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -133,7 +130,7 @@
 		</div>
 		</div>
 	</div>
-</div>
+</div> -->
 
 <ng-template #content let-modal>
 	<div class="modal-header">
@@ -147,7 +144,7 @@
 		<div class="form-group">
 			<div class="form-floating mb-3">
 				<input type="text" class="form-control" id="floatingName" placeholder="Name" name="name"
-					#name="ngModel" ngModel>
+					#name="ngModel" [(ngModel)] = "row_data['name']">
 				<label for="floatingName">Name</label>
 			</div>
 		</div>
@@ -183,10 +180,9 @@
 	</div>
   </ng-template>
   
-  <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+  
   
   <hr>
-  
-  <pre>{{ closeResult }}</pre>
+
 
 <router-outlet></router-outlet>
